@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Ray Marching Game</title>
-    </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebGL </title>
+  <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS -->
+</head>
 <body>
-    <h1>Welcome to My Ray Marching Game !</h1>
-    <p>This is a simple HTML page for now !</p>
+  <canvas id="c"></canvas>
+
+  <!-- Vertex Shader -->
+  <script id="vertex-shader-2d" type="notjs">
+    attribute vec4 a_position;
+
+    void main() {
+      gl_Position = a_position;
+    }
+  </script>
+
+  <!-- Fragment Shader -->
+  <script id="fragment-shader-2d" type="notjs">
+    precision mediump float;
+
+    void main() {
+      gl_FragColor = vec4(1, 0, 0.5, 1); // Renvoie une couleur rouge-violet
+    }
+  </script>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
 </body>
 </html>
