@@ -9,7 +9,7 @@ La balise `<canvas>` en HTML crée une surface de dessin que WebGL utilise pour 
 ---
 
 ### 3. **Vertex Shader**
-Un *vertex shader* (ou "shader de sommet") est un programme court exécuté pour chaque sommet d’un objet en 3D. Son rôle principal est de calculer la position finale de chaque sommet à afficher sur l'écran. Dans ce code, le vertex shader définit où chaque sommet du triangle doit être placé dans l'espace de rendu.
+Un *vertex shader* (ou "shader de sommet") est un programme court exécuté pour chaque sommet d’un objet en 3D. Son rôle principal est de calculer la position finale de chaque sommet à afficher sur l'écran. 
 
 ---
 
