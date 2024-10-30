@@ -24,16 +24,17 @@ function createProgram(gl, vertexShader, fragmentShader) {
   console.log(gl.getProgramInfoLog(program));
   gl.deleteProgram(program);
 }
-function createRectangleVertices(){
-  return [
-    -0.8, -0.5,
-    -0.4, -0.5,
-    -0.8, 0.5,
-    -0.8, 0.5,
-    -0.4, -0.5,
-    -0.4, 0.5,
-  ];
+
+// Rectangle vertices
+
+function createRectangleVertices(positions){
+  return positions;
 }
+
+
+// Circle Vertices
+
+
 function createCircleVertices (numSegments, radius){
   var positions = []
 
@@ -81,8 +82,17 @@ function main() {
 
   var rectangleBuffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, rectangleBuffer); 
+  
+  var position = [
+      -0.8, -0.5,
+      -0.4, -0.5,
+      -0.8, 0.5,
+      -0.8, 0.5,
+      -0.4, -0.5,
+      -0.4, 0.5,
 
-  var rectangleVertices = createRectangleVertices(); 
+  ];
+  var rectangleVertices = createRectangleVertices(position); 
   gl.bufferData(
     gl.ARRAY_BUFFER, 
     new Float32Array (rectangleVertices), 
