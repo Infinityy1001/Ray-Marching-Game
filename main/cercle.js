@@ -24,7 +24,7 @@ function createProgram(gl, vertexShader, fragmentShader) {
     console.log(gl.getProgramInfoLog(program));
     gl.deleteProgram(program);
   }
-function createCircle (numSegments, radius){
+function createCircleVertices (numSegments, radius){
     var positions = []
 
     positions.push(0,0); 
@@ -67,7 +67,7 @@ function main() {
   
     var numSegments = 50; 
     var radius = 0.5; 
-    var positions = createCircle(numSegments, radius)
+    var positions = createCircleVertices(numSegments, radius)
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
   
     // Resize canvas to window size
@@ -91,11 +91,11 @@ function main() {
     gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
   
     // Tell the attribute how to get data out of positionBuffer (ARRAY_BUFFER)
-    var size = 2;          // 2 components per iteration
-    var type = gl.FLOAT;   // the data is 32bit floats
-    var normalize = false; // don't normalize the data
+    var size = 2;          
+    var type = gl.FLOAT;   
+    var normalize = false; 
     var stride = 0;        // 0 = move forward size * sizeof(type) each iteration to get the next position
-    var offset = 0;        // start at the beginning of the buffer
+    var offset = 0;        
     gl.vertexAttribPointer(
         positionAttributeLocation, size, type, normalize, stride, offset);
   

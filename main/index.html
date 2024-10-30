@@ -19,16 +19,24 @@
   </script>
 
   <!-- Fragment Shader -->
-  <script id="fragment-shader-2d" type="notjs">
+  <script id="fragment-shader-red" type="notjs">
     precision mediump float;
 
     void main() {
-      gl_FragColor = vec4(0, 0, 0.9, 1); // Renvoie une couleur rouge-violet
+      gl_FragColor = vec4(0.8, 0, 0.1, 1); 
+    }
+  </script>
+  <script id="fragment-shader-blue" type="notjs">
+    precision mediump float;
+
+    void main() {
+      gl_FragColor = vec4(0, 0, 0.9, 1); 
     }
   </script>
 
 
-  <script src="rectangle.js"></script>
+  <!-- <script src="rectangle.js"></script> -->
   <!-- <script src="cercle.js"></script> -->
+  <script src ="2objects.js"></script>
 </body>
 </html>
