@@ -9,7 +9,7 @@
 <body>
    <canvas id="c"></canvas>
 
-  <!-- Vertex Shader -->
+  <!-- Vertex Shader 2D-->
   <script id="vertex-shader-2d" type="notjs">
     attribute vec4 a_position;
 
@@ -18,7 +18,24 @@
     }
   </script>
 
-  <!-- Fragment Shader -->
+  <!-- Vertex Shader 3D -->
+  <script id="vertex-shader-3d" type="notjs">
+    attribute vec4 a_position;
+    uniform mat4 u_matrix;
+  
+    void main() {
+      gl_Position = u_matrix * a_position; // Transforme les coordonnées
+    }
+  </script>
+
+  <!-- Fragment Shader 2D -->
+  <script id="fragment-shader-2d" type="notjs">
+    precision mediump float;
+
+    void main() {
+      gl_FragColor = vec4(0, 0, 0, 1); 
+    }
+  </script>
   <script id="fragment-shader-red" type="notjs">
     precision mediump float;
 
@@ -40,6 +57,6 @@
     <!-- <script src ="2D Object/2objects.js"></script> -->
   
   <!-- 3D Object -->
-   <script src ="3D Object/rectangle.js"></script>
+   <script src ="2D Object/rectangle.js"></script>
 </body>
 </html>
